@@ -1,6 +1,9 @@
 import { IncomingMessage, ServerResponse } from 'http';
 
-export const correctData = async (req: IncomingMessage, res: ServerResponse): Promise<any> => {
+export const correctData = async (
+  req: IncomingMessage,
+  res: ServerResponse
+  ): Promise<any> => {
   return new Promise((resolve, reject) => {
     let data = '';
     req.on('data', (chunk) => { data += chunk.toString() });

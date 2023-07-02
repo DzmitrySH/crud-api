@@ -6,3 +6,7 @@ export interface IUser {
 }
 
 export type dataUsers = IUser[]
+
+export const enum message {
+  
+}
