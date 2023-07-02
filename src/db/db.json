@@ -1,0 +1,7 @@
+{"users":[
+  {"username":"Romel","age":14,"hobbies":["Jump"],"id":"b8b842fe-d279-4a15-1d16-f5d25ad3d5ca"},
+  {"username":"Morse","age":76,"hobbies":["Run"],"id":"b8b842fe-d279-4a15-9d16-f5d25ad3d8ca"},
+  {"username":"Peter","age":24,"hobbies":["Ride"],"id":"5b6b34fd-4720-414e-ac06-ef5538ec1267"},
+  {"username":"Mailo","age":14,"hobbies":["Jump"],"id":"ceea6ab5-e28e-4f3e-ab36-af0e9ef1e77a"}
+  ]
+}
