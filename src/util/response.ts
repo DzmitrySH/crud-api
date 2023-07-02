@@ -1,5 +1,5 @@
 import { ServerResponse } from 'http';
-import { dataUsers } from '../types/types';
+import { dataUsers, IUser } from '../types/types';
 
 export const headerRes = { 'Content-Type': 'application/json' };
 
@@ -15,9 +15,8 @@ export const errorRes = (
 export const successOk = (
   res: ServerResponse,
   code: number,
-  data?: dataUsers
+  data?: dataUsers | IUser,
 ): void => {
   res.writeHead(code, headerRes);
-  if (data) res.end(JSON.stringify(data));
-  else res.end();
+  res.end(JSON.stringify(data));
 };
