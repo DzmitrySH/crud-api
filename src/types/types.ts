@@ -2,11 +2,7 @@ export interface IUser {
   id: string;
   username: string;
   age: number;
-  hobbies: string[]
+  hobbies: string[];
 }
 
-export type dataUsers = IUser[]
-
-export const enum message {
-  
-}
+export type dataUsers = IUser[];

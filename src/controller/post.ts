@@ -4,7 +4,7 @@ import { correctData } from '../util/correctData';
 import { dataUsers, IUser } from '../types/types';
 import { errorRes, successOk, headerRes } from '../util/response';
 
-export const changeUser = async (
+export const post = async (
   url: string,
   req: IncomingMessage,
   res: ServerResponse,
