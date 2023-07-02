@@ -13,7 +13,7 @@ export const errorRes = (
 };
 
 export const successOk = (
-  res: ServerResponse,
+  res: ServerResponse | never,
   code: number,
   data?: dataUsers | IUser,
 ): void => {
