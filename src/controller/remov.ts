@@ -3,7 +3,7 @@ import { validate } from 'uuid';
 import { dataUsers } from '../types/types';
 import { errorRes, successOk, headerRes } from '../util/response';
 
-export const deleteUser = (
+export const remov = (
   url: string,
   res: ServerResponse,
   aserDb: dataUsers,
