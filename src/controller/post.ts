@@ -3,6 +3,7 @@ import { v4 as uuid} from 'uuid';
 import { correctData } from '../util/correctData';
 import { dataUsers, IUser } from '../types/types';
 import { errorRes, successOk, headerRes } from '../util/response';
+import { errorMsg } from '../types/types';
 
 export const post = async (
   url: string,
@@ -29,12 +30,12 @@ export const post = async (
         userDb.push(getUser);
         res.end(JSON.stringify(getUser));
       } else {
-        errorRes(res, 400, process.env.USER_ID_ERROR_MESSAGE as string);
+        errorRes(res, 400, errorMsg.nonQuery);
       }
     } catch (error) {
-      errorRes(res, 500, process.env.SERVER_ERROR_MESSAGE as string);
+      errorRes(res, 500, errorMsg.serverError);
     }
   } else {
-    errorRes(res, 400, process.env.BODY_ERROR_MESSAGE as string);
+    errorRes(res, 400, errorMsg.invalidBody);
   }
 };

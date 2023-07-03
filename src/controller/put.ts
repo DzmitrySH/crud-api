@@ -3,6 +3,7 @@ import { validate } from 'uuid';
 import { correctData } from '../util/correctData';
 import { dataUsers, IUser } from '../types/types';
 import { errorRes, successOk, headerRes } from '../util/response';
+import { errorMsg } from '../types/types';
 
 export const put = async (
   url: string,
@@ -13,11 +14,11 @@ export const put = async (
   if (url?.startsWith('/api/users/')) {
     const id = url.split('/')[3];
     if (!id) {
-      errorRes(res, 404, process.env.USER_ERROR_MESSAGE as string);
+      errorRes(res, 404, errorMsg.notFound);
     } else if (!validate(id)) {
-      errorRes(res, 400, process.env.USER_ID_ERROR_MESSAGE as string);
+      errorRes(res, 400, errorMsg.invalidId);
     } else if (!userDb.find((i) => i.id === id)) {
-      errorRes(res, 404, process.env.USER_ERROR_MESSAGE as string);
+      errorRes(res, 404, errorMsg.notFound);
     } else {
       try {
         const data: IUser = await correctData(req, res);
@@ -39,13 +40,13 @@ export const put = async (
           res.writeHead(200, headerRes);
           res.end(JSON.stringify(correctUser));
         } else {
-          errorRes(res, 400, process.env.BODY_ERROR_MESSAGE as string);
+          errorRes(res, 400, errorMsg.nonQuery);
           }
       } catch (err) {
-      errorRes(res, 500, process.env.SERVER_ERROR_MESSAGE as string);
+      errorRes(res, 500, errorMsg.serverError);
       }
     }
   } else {
-  errorRes(res, 400, process.env.BODY_ERROR_MESSAGE as string);
+  errorRes(res, 400, errorMsg.invalidBody);
   }
 };

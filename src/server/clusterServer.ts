@@ -1,12 +1,12 @@
 import { createServer, IncomingMessage, ServerResponse } from 'http';
-// import { setMaxListeners } from 'node:events';
+import { setMaxListeners } from 'node:events';
 import cluster from 'cluster';
 import { cpus } from 'os';
 import { switchServer } from './switchServer';
 import { dataUsers } from '../types/types';
 import 'dotenv/config';
 
-// setMaxListeners(36);
+setMaxListeners(36);
 const SERVER_PORT = process.env.SERVER_PORT || 3001;
 const MULTI_PORT = process.env.MULTI_PORT || 4001;
 const args = process.argv.slice(2);
