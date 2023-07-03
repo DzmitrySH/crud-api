@@ -15,7 +15,7 @@ export const errorRes = (
 export const successOk = (
   res: ServerResponse,
   code: number,
-  data?: dataUsers | IUser,
+  data: dataUsers | IUser,
 ): void => {
   res.writeHead(code, headerRes);
   res.end(JSON.stringify(data));

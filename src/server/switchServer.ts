@@ -10,7 +10,7 @@ export const switchServer = (
   req: IncomingMessage,
   res: ServerResponse,
   dbSet: dataUsers
-    ): void => {
+  ): void => {
   const { method, url } = req;
 
   switch (method) {

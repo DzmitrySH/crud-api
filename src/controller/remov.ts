@@ -7,7 +7,7 @@ export const remov = (
   url: string,
   res: ServerResponse,
   aserDb: dataUsers,
-) => {
+): void => {
   if (url?.startsWith('/api/users/')) {
     const id = url.split('/')[3];
     try {
