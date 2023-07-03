@@ -22,7 +22,8 @@ export const post = async (
       try {
         const data: IUser = await correctData(req, res);
         if (
-          ['username', 'age', 'hobbies'].every((key) => data.hasOwnProperty(key)) &&
+          ['username', 'age', 'hobbies'].every((key) => 
+          data.hasOwnProperty(key)) &&
           Array.isArray(data.hobbies) &&
           data.username.trim().length > 0
         ) {

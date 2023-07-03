@@ -1,7 +1,7 @@
 {
   "watch": ["src"],
   "ext": "ts,json,js",
-  "exec": "ts-node src/server.ts",
+  "exec": "ts-node src/index.ts",
   "ignore": ["*.test.ts", ".git", "node_modules/", "dist/", "coverage/"],
   "delay": "3",
   "execMap": {

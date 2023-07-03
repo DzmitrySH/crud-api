@@ -1,12 +1,12 @@
 import { IncomingMessage, ServerResponse } from 'http';
-import { get } from './controller/get';
-import { post } from './controller/post';
-import { put } from './controller/put';
-import { remov } from './controller/remov';
-import { dataUsers } from './types/types';
-import { errorRes } from './util/response';
+import { get } from '../controller/get';
+import { post } from '../controller/post';
+import { put } from '../controller/put';
+import { remov } from '../controller/remov';
+import { dataUsers } from '../types/types';
+import { errorRes } from '../util/response';
 
-export const Routes = (
+export const switchServer = (
   req: IncomingMessage,
   res: ServerResponse,
   dbSet: dataUsers
