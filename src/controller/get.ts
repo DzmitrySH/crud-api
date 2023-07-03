@@ -1,8 +1,7 @@
 import { ServerResponse } from 'http';
 import { validate } from 'uuid';
-import { dataUsers } from '../types/types';
-import { errorRes, successOk,  } from '../util/response';
-import { errorMsg } from '../types/types';
+import { dataUsers, errorMsg } from '../types/types';
+import { errorRes, successOk  } from '../util/response';
 
 export const get = (
   url: string,
@@ -18,7 +17,6 @@ export const get = (
   } else if (url?.startsWith('/api/users/')) {
     const id = url.split('/')[3];
     const user = userDb.find((i) => i.id === id);
-
     if (!id) {
       errorRes(res, 404, errorMsg.notFound);
     } else if (!validate(id)) {

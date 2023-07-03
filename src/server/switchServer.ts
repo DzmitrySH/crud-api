@@ -3,7 +3,7 @@ import { get } from '../controller/get';
 import { post } from '../controller/post';
 import { put } from '../controller/put';
 import { remov } from '../controller/remov';
-import { dataUsers } from '../types/types';
+import { dataUsers, errorMsg } from '../types/types';
 import { errorRes } from '../util/response';
 
 export const switchServer = (
@@ -12,7 +12,6 @@ export const switchServer = (
   dbSet: dataUsers
   ): void => {
   const { method, url } = req;
-
   switch (method) {
     case 'GET': if (url) get(url, res, dbSet); 
       break;
@@ -23,6 +22,6 @@ export const switchServer = (
     case 'DELETE': if (url) remov(url, res, dbSet);
       break;
     default:
-      errorRes(res, 400, process.env.BODY_ERROR_MESSAGE as string);
+      errorRes(res, 400, errorMsg.nonQuery);
   }
 };

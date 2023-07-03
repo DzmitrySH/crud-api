@@ -1,8 +1,7 @@
 import { ServerResponse } from 'http';
 import { validate } from 'uuid';
-import { dataUsers } from '../types/types';
+import { dataUsers, errorMsg } from '../types/types';
 import { errorRes, successOk, headerRes } from '../util/response';
-import { errorMsg } from '../types/types';
 
 export const remov = (
   url: string,

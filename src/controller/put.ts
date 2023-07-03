@@ -1,9 +1,8 @@
 import { IncomingMessage, ServerResponse } from 'http';
 import { validate } from 'uuid';
 import { correctData } from '../util/correctData';
-import { dataUsers, IUser } from '../types/types';
+import { dataUsers, IUser, errorMsg } from '../types/types';
 import { errorRes, successOk, headerRes } from '../util/response';
-import { errorMsg } from '../types/types';
 
 export const put = async (
   url: string,
